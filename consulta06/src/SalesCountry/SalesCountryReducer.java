@@ -1,12 +1,9 @@
 package SalesCountry;
 
-import org.apache.hadoop.io.Text;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.*;
 
 public class SalesCountryReducer extends MapReduceBase implements Reducer<Text, Text, Text, Text> {
     public void reduce(Text t_key, Iterator<Text> values, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
@@ -19,10 +16,8 @@ public class SalesCountryReducer extends MapReduceBase implements Reducer<Text, 
         double suma = 0;
         for (double v : lista) suma += v;
         double promedio = suma / n;
-        // Mediana
         Collections.sort(lista);
         double mediana = (n % 2 == 0) ? (lista.get(n/2 - 1) + lista.get(n/2)) / 2.0 : lista.get(n/2);
-        // Desviacion estandar
         double sumaCuadrados = 0;
         for (double v : lista) sumaCuadrados += Math.pow(v - promedio, 2);
         double desviacion = Math.sqrt(sumaCuadrados / n);

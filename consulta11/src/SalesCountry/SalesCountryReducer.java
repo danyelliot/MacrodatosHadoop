@@ -1,14 +1,17 @@
 package SalesCountry;
 
-import org.apache.hadoop.io.Text;
-
 import java.io.IOException;
-import java.util.Iterator;
+import java.util.*;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.*;
 
 public class SalesCountryReducer extends MapReduceBase implements Reducer<Text, Text, Text, Text> {
     public void reduce(Text t_key, Iterator<Text> values, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
         int count = 0;
-        while (values.hasNext()) { values.next(); count++; }
+        while (values.hasNext()) {
+            values.next();
+            count++;
+        }
         output.collect(t_key, new Text("distritos=" + count));
     }
 }

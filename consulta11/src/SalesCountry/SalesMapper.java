@@ -1,9 +1,9 @@
 package SalesCountry;
 
+import java.io.IOException;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-
-import java.io.IOException;
+import org.apache.hadoop.mapred.*;
 
 public class SalesMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, Text> {
     public void map(LongWritable key, Text value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
@@ -17,12 +17,12 @@ public class SalesMapper extends MapReduceBase implements Mapper<LongWritable, T
             if (!data[11].trim().isEmpty()) {
                 int pension65 = Integer.parseInt(data[11].trim());
                 String nivel;
-                if (pension65 == 0)          nivel = "SIN_COBERTURA";
-                else if (pension65 <= 50)     nivel = "BAJA";
-                else if (pension65 <= 200)    nivel = "MEDIA";
-                else if (pension65 <= 500)    nivel = "ALTA";
-                else                          nivel = "MUY_ALTA";
-                output.collect(new Text(departamento + "_" + nivel), new Text(ubigeo + ":" + pension65));
+                if (pension65 == 0)       nivel = "SIN_COBERTURA";
+                else if (pension65 <= 50)  nivel = "BAJA";
+                else if (pension65 <= 200) nivel = "MEDIA";
+                else if (pension65 <= 500) nivel = "ALTA";
+                else                       nivel = "MUY_ALTA";
+                output.collect(new Text(departamento + "_" + nivel), new Text("1"));
             }
         } catch (NumberFormatException e) {}
     }

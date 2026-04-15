@@ -1,9 +1,9 @@
 package SalesCountry;
 
+import java.io.IOException;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-
-import java.io.IOException;
+import org.apache.hadoop.mapred.*;
 
 public class SalesMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, Text> {
     private static final String FECHA_INICIO = "20241201";

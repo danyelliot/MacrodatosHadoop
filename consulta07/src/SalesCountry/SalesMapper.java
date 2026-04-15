@@ -1,9 +1,9 @@
 package SalesCountry;
 
+import java.io.IOException;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-
-import java.io.IOException;
+import org.apache.hadoop.mapred.*;
 
 public class SalesMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, Text> {
     private static final String SUBTEXTO = "01";
@@ -13,7 +13,7 @@ public class SalesMapper extends MapReduceBase implements Mapper<LongWritable, T
         String[] data = linea.split(";");
         if (data.length < 2) return;
         String ubigeo = data[1].trim();
-        if (ubigeo.contains(SUBTEXTO)) {
+        if (ubigeo.startsWith(SUBTEXTO)) {
             output.collect(new Text(ubigeo), new Text(linea));
         }
     }

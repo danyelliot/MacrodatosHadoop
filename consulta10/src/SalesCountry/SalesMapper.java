@@ -1,9 +1,9 @@
 package SalesCountry;
 
+import java.io.IOException;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-
-import java.io.IOException;
+import org.apache.hadoop.mapred.*;
 
 public class SalesMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, Text> {
     public void map(LongWritable key, Text value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
@@ -19,6 +19,7 @@ public class SalesMapper extends MapReduceBase implements Mapper<LongWritable, T
         output.collect(new Text(departamento), new Text(ninos + "," + iiee));
     }
 }
+
 class SalesMapper2 extends MapReduceBase implements Mapper<LongWritable, Text, Text, Text> {
     public void map(LongWritable key, Text value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
         String[] partes = value.toString().split("\t");
@@ -30,7 +31,7 @@ class SalesMapper2 extends MapReduceBase implements Mapper<LongWritable, Text, T
             double ninos = Double.parseDouble(vals[0].trim());
             double iiee  = Double.parseDouble(vals[1].trim());
             double ratio = (iiee > 0) ? ninos / iiee : 0.0;
-            output.collect(new Text(depto), new Text(String.format("%.2f ninos/IIEE", ratio)));
+            output.collect(new Text(depto), new Text(String.format("ninos=%.0f iiee=%.0f ratio=%.2f ninos/IIEE", ninos, iiee, ratio)));
         } catch (NumberFormatException e) {}
     }
 }
