@@ -5,6 +5,16 @@
       <module fileurl="file://$PROJECT_DIR$/MacrodatosHadoop.iml" filepath="$PROJECT_DIR$/MacrodatosHadoop.iml" />
       <module fileurl="file://$PROJECT_DIR$/consulta01/consulta01.iml" filepath="$PROJECT_DIR$/consulta01/consulta01.iml" />
       <module fileurl="file://$PROJECT_DIR$/consulta02/consulta02.iml" filepath="$PROJECT_DIR$/consulta02/consulta02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consulta03/consulta03.iml" filepath="$PROJECT_DIR$/consulta03/consulta03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consulta04/consulta04.iml" filepath="$PROJECT_DIR$/consulta04/consulta04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consulta05/consulta05.iml" filepath="$PROJECT_DIR$/consulta05/consulta05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consulta06/consulta06.iml" filepath="$PROJECT_DIR$/consulta06/consulta06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consulta07/consulta07.iml" filepath="$PROJECT_DIR$/consulta07/consulta07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consulta08/consulta08.iml" filepath="$PROJECT_DIR$/consulta08/consulta08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consulta09/consulta09.iml" filepath="$PROJECT_DIR$/consulta09/consulta09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consulta10/consulta10.iml" filepath="$PROJECT_DIR$/consulta10/consulta10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consulta11/consulta11.iml" filepath="$PROJECT_DIR$/consulta11/consulta11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consulta12/consulta12.iml" filepath="$PROJECT_DIR$/consulta12/consulta12.iml" />
     </modules>
   </component>
 </project>
