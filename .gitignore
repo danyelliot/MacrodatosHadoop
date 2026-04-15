@@ -28,3 +28,15 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Agregados para el proyecto MacrodatosHadoop (Hadoop, IDEs, Classes)
+*.iml
+*.iws
+.idea/
+*.class
+classes/
+**/classes/
+*.jar
+*.war
+output/
+**/output/
